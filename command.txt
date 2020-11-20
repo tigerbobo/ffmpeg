@@ -3,3 +3,6 @@ ffmpeg -i input.mp4 -ss 40 -c copy -t 60 output.mp4
 
 // 修改分辨率
 ffmpeg -i input.mp4 -s 720x540 output.mp4
+
+// 旋转
+ffmpeg -i input.mp4 -metadata:s:v rotate="180" output.mp4
