@@ -6,3 +6,28 @@ ffmpeg -i input.mp4 -s 720x540 output.mp4
 
 // 旋转
 ffmpeg -i input.mp4 -metadata:s:v rotate="180" output.mp4
+
+
+// 精确截取
+ffmpeg.exe -y -i in.mp4 -ss 00:10 -to 00:52 -c:a copy -vcodec libx264 -keyint_min 2 -g 1 -y 01.mp4
+
+// 多视频合并
+ffmpeg -f concat -safe 0 -i file.txt -c copy output.mp4
+
+// file.txt
+file  'D:\01.mp4'
+file  'D:\02.mp4'
+file  'D:\03.mp4'
+file  'D:\04.mp4'
+file  'D:\05.mp4'
+file  'D:\06.mp4'
+file  'D:\07.mp4'
+file  'D:\08.mp4'
+file  'D:\09.mp4'
+file  'D:\10.mp4'
+file  'D:\11.mp4'
+file  'D:\12.mp4'
+file  'D:\13.mp4'
+
+// 加速
+ffmpeg -i old.mp4 -vf "setpts=0.5*PTS" new.mp4
