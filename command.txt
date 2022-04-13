@@ -29,5 +29,8 @@ file  'D:\11.mp4'
 file  'D:\12.mp4'
 file  'D:\13.mp4'
 
-// 加速
+// 加减速
 ffmpeg -i old.mp4 -vf "setpts=0.5*PTS" new.mp4
+ffmpeg -i old.mp4 -vf  "setpts=0.25*PTS" new.mp4
+ffmpeg -i old.mp4 -vf "setpts=4*PTS" new.mp4
+
